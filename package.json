@@ -1,0 +1,31 @@
+{
+  "name": "beacongrid",
+  "version": "2.0.0",
+  "description": "BeaconGrid Emergency Resource Map & Real-time GDELT News Intelligence Dashboard for Tamil Nadu",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node --test tests/**/*.test.js"
+  },
+  "keywords": [
+    "emergency",
+    "disaster-management",
+    "tamil-nadu",
+    "leaflet",
+    "gdelt",
+    "mongodb",
+    "openstreetmap"
+  ],
+  "author": "SATHYA-SAI-S",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongodb": "^6.13.0"
+  },
+  "devDependencies": {
+    "supertest": "^7.0.0"
+  }
+}
