@@ -1,0 +1,120 @@
+/* Mobile Draggable Bottom Sheet */
+
+.bottom-sheet-container {
+  display: none;
+}
+
+@media (max-width: 899px) {
+  .bottom-sheet-container {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 90vh;
+    background: var(--bg-surface);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.2);
+    z-index: var(--z-bottom-sheet);
+    transform: translateY(calc(100% - 76px)); /* Peek height */
+    transition: transform 0.28s cubic-bezier(0.2, 0.9, 0.3, 1);
+    will-change: transform;
+    overflow: hidden;
+  }
+
+  .bottom-sheet-container.dragging {
+    transition: none; /* No transition while user fingers are dragging */
+  }
+
+  .bottom-sheet-container.state-peek {
+    transform: translateY(calc(100% - 76px));
+  }
+
+  .bottom-sheet-container.state-half {
+    transform: translateY(48%);
+  }
+
+  .bottom-sheet-container.state-full {
+    transform: translateY(6%);
+  }
+
+  /* Sheet Drag Handle Area */
+  .bottom-sheet-handle-area {
+    width: 100%;
+    padding: 10px 0 6px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: grab;
+    user-select: none;
+    touch-action: none; /* Crucial for custom pointer/touch drag */
+    background: var(--bg-surface);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .bottom-sheet-handle-bar {
+    width: 44px;
+    height: 5px;
+    background: var(--border-strong);
+    border-radius: var(--radius-full);
+    margin-bottom: 6px;
+  }
+
+  .bottom-sheet-summary-row {
+    width: 100%;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: var(--text-sm);
+    font-weight: 600;
+  }
+
+  .sheet-title-text {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-primary);
+  }
+
+  .sheet-chevron {
+    color: var(--text-muted);
+    transition: transform var(--transition-fast);
+  }
+
+  .bottom-sheet-container.state-full .sheet-chevron {
+    transform: rotate(180deg);
+  }
+
+  /* Sheet Content Scroll Area */
+  .bottom-sheet-content {
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 8px 12px 28px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  /* Backdrop scrim when sheet is expanded to full */
+  .bottom-sheet-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(15, 23, 42, 0.4);
+    z-index: calc(var(--z-bottom-sheet) - 1);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.28s ease;
+  }
+
+  .bottom-sheet-backdrop.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}

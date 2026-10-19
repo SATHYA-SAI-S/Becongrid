@@ -1,0 +1,103 @@
+:root {
+  /* Color Palette - Neutrals */
+  --bg-app: #0f172a;
+  --bg-surface: #ffffff;
+  --bg-surface-elevated: #f8fafc;
+  --bg-surface-subtle: #f1f5f9;
+  --bg-overlay: rgba(15, 23, 42, 0.65);
+
+  --border-subtle: #e2e8f0;
+  --border-strong: #cbd5e1;
+  --border-focus: #2563eb;
+
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --text-inverse: #ffffff;
+
+  /* Accent Colors */
+  --color-primary: #2563eb;
+  --color-primary-hover: #1d4ed8;
+  --color-primary-light: #eff6ff;
+
+  --color-danger: #dc2626;
+  --color-danger-light: #fef2f2;
+  --color-danger-border: #fecaca;
+  --color-warning: #d97706;
+  --color-warning-light: #fffbeb;
+  --color-warning-border: #fde68a;
+  --color-success: #16a34a;
+  --color-success-light: #f0fdf4;
+  --color-info: #0284c7;
+  --color-info-light: #f0f9ff;
+
+  /* Category Specific Colors */
+  --cat-hospital: #e11d48;
+  --cat-hospital-bg: #ffe4e6;
+  --cat-clinic: #0d9488;
+  --cat-clinic-bg: #ccfbf1;
+  --cat-pharmacy: #059669;
+  --cat-pharmacy-bg: #d1fae5;
+  --cat-police: #2563eb;
+  --cat-police-bg: #dbeafe;
+  --cat-fire: #ea580c;
+  --cat-fire-bg: #ffedd5;
+  --cat-shelter: #d97706;
+  --cat-shelter-bg: #fef3c7;
+  --cat-water: #0284c7;
+  --cat-water-bg: #e0f2fe;
+  --cat-food: #7c3aed;
+  --cat-food-bg: #ede9fe;
+  --cat-toilet: #6366f1;
+  --cat-toilet-bg: #e0e7ff;
+
+  /* Elevation Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --shadow-floating: 0 14px 28px rgba(0,0,0,0.18), 0 10px 10px rgba(0,0,0,0.12);
+
+  /* Typography */
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  --text-xs: 0.75rem;     /* 12px */
+  --text-sm: 0.844rem;    /* 13.5px */
+  --text-base: 0.938rem;  /* 15px */
+  --text-lg: 1.063rem;    /* 17px */
+  --text-xl: 1.25rem;     /* 20px */
+  --text-2xl: 1.5rem;     /* 24px */
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-spring: 300ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Layout dimensions */
+  --sidebar-width: 400px;
+  --header-height: 64px;
+  --touch-target-min: 44px;
+  --z-map: 1;
+  --z-floating-search: 1000;
+  --z-sidebar: 1010;
+  --z-bottom-sheet: 1020;
+  --z-modal: 1050;
+  --z-disclaimer: 1060;
+  --z-toast: 1070;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
