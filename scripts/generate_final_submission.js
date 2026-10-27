@@ -498,7 +498,21 @@ async function buildAcademicSubmissionDocx() {
                       new Paragraph({
                         spacing: { before: 0, after: 60 },
                         children: [
-                          new TextRun({ text: 'PROJECT REPOSITORY & CONVERSATION ARTIFACTS', bold: true, size: 20, color: COLOR_PRIMARY })
+                          new TextRun({ text: 'PROJECT REPOSITORY, LIVE DEPLOYMENT & ARTIFACTS', bold: true, size: 20, color: COLOR_PRIMARY })
+                        ]
+                      }),
+                      new Paragraph({
+                        spacing: { before: 30, after: 30 },
+                        children: [
+                          new TextRun({ text: '🚀 Live Static Web Portal (GitHub Pages): ', bold: true, size: 20, color: COLOR_PRIMARY }),
+                          new TextRun({ text: 'https://sathya-sai-s.github.io/Becongrid/', bold: true, size: 20, color: COLOR_ACCENT })
+                        ]
+                      }),
+                      new Paragraph({
+                        spacing: { before: 30, after: 30 },
+                        children: [
+                          new TextRun({ text: '🗺️ Live Tactical Command Map: ', bold: true, size: 20, color: COLOR_PRIMARY }),
+                          new TextRun({ text: 'https://sathya-sai-s.github.io/Becongrid/map.html', bold: true, size: 20, color: COLOR_BLUE })
                         ]
                       }),
                       new Paragraph({
@@ -565,8 +579,12 @@ async function buildAcademicSubmissionDocx() {
           // ================= SECTION 2: CODE & GITHUB LINK =================
           ...createHeading1('2. Code & GitHub Link', '💻'),
           createCalloutBox(
-            '🔗 Official Git Deployment & Remote Repository',
-            'Repository URL: https://github.com/SATHYA-SAI-S/Becongrid\nBranch: main | Commit Version: Production Release v2.0.0\nGit Remote Origin: https://github.com/SATHYA-SAI-S/Becongrid.git\nLicense: MIT Open Source | Deployed Runtime: Node.js (v20+), Express.js, MongoDB / In-Memory GeoJSON',
+            '🔗 Official Git Deployment & Live Static Page Links',
+            '• Live Static Web Portal: https://sathya-sai-s.github.io/Becongrid/\n' +
+            '• Live Tactical Command Map: https://sathya-sai-s.github.io/Becongrid/map.html\n' +
+            '• GitHub Source Repository: https://github.com/SATHYA-SAI-S/Becongrid\n' +
+            '• Deployment Branches: main (Production) & gh-pages (GitHub Pages Static Host)\n' +
+            '• License: MIT Open Source | Deployed Runtime: Static HTML5 / Vanilla ES Modules / Leaflet Engine / Node.js Express',
             COLOR_BLUE,
             COLOR_BG_SUBTLE
           ),
@@ -934,6 +952,25 @@ async function buildAcademicSubmissionDocx() {
                     children: [new Paragraph({ children: [new TextRun({ text: '✔ In-memory GeoJSON engine activates automatically without MongoDB', color: COLOR_EMERALD, bold: true })] })]
                   })
                 ]
+              }),
+              new TableRow({
+                children: [
+                  new TableCell({
+                    shading: { fill: 'FFFFFF', type: ShadingType.CLEAR },
+                    margins: { top: 80, bottom: 80, left: 120, right: 120 },
+                    children: [new Paragraph({ children: [new TextRun({ text: 'Static Web Deployment', bold: true })] })]
+                  }),
+                  new TableCell({
+                    shading: { fill: 'FFFFFF', type: ShadingType.CLEAR },
+                    margins: { top: 80, bottom: 80, left: 120, right: 120 },
+                    children: [new Paragraph({ children: [new TextRun({ text: 'Live static page hosted on GitHub Pages with full interactive map' })] })]
+                  }),
+                  new TableCell({
+                    shading: { fill: 'FFFFFF', type: ShadingType.CLEAR },
+                    margins: { top: 80, bottom: 80, left: 120, right: 120 },
+                    children: [new Paragraph({ children: [new TextRun({ text: '✔ Deployed at https://sathya-sai-s.github.io/Becongrid/', color: COLOR_BLUE, bold: true })] })]
+                  })
+                ]
               })
             ]
           }),
@@ -941,10 +978,12 @@ async function buildAcademicSubmissionDocx() {
           new Paragraph({ spacing: { before: 180, after: 60 } }),
           createCalloutBox(
             '🌟 Final Project Submission Links Summary',
-            'GitHub Repository: https://github.com/SATHYA-SAI-S/Becongrid\n' +
-            'AI Prompts & Full Conversation Archive: https://drive.google.com/file/d/1_J1iH8bvif2vKBPjXDVEwQ2uck7Zk7MB/view?usp=sharing\n' +
-            'Submission Document: BeaconGrid_Final_Submission.pdf (and Becon_Gird_Final_Submission.pdf)\n' +
-            'Timestamp: October 27, 2026 | Department of Advanced Web Technologies',
+            '• Live Static Web Portal: https://sathya-sai-s.github.io/Becongrid/\n' +
+            '• Live Tactical Command Map: https://sathya-sai-s.github.io/Becongrid/map.html\n' +
+            '• GitHub Source Repository: https://github.com/SATHYA-SAI-S/Becongrid\n' +
+            '• AI Prompts & Full Conversation Archive: https://drive.google.com/file/d/1_J1iH8bvif2vKBPjXDVEwQ2uck7Zk7MB/view?usp=sharing\n' +
+            '• Final Submission Document: BeaconGrid_Final_Submission.pdf (and Becon_Gird_Final_Submission.pdf)\n' +
+            '• Academic Year: 2026-2027 | Department of Advanced Web Technologies',
             COLOR_PRIMARY,
             COLOR_BG_SUBTLE
           )
