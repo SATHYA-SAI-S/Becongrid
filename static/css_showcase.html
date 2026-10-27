@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Design System & Component Output Showcase</title>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/bottom-sheet.css">
+  <style>
+    body {
+      overflow-y: auto !important;
+      background: #0f172a;
+      color: #f8fafc;
+      padding: 30px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .showcase-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+    .section-box {
+      background: #ffffff;
+      color: #0f172a;
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+    .section-header {
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 12px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .section-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #1e293b;
+    }
+    .file-badge {
+      background: #2563eb;
+      color: white;
+      font-family: monospace;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 13px;
+    }
+    .swatch-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 12px;
+    }
+    .swatch-card {
+      border-radius: 8px;
+      padding: 10px;
+      border: 1px solid #cbd5e1;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 12px;
+    }
+    .color-block {
+      height: 48px;
+      border-radius: 6px;
+      border: 1px solid rgba(0,0,0,0.1);
+    }
+    .chips-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="showcase-container">
+
+    <!-- 1. tokens.css Output -->
+    <div class="section-box" id="tokensShowcase">
+      <div class="section-header">
+        <h2 class="section-title">Design Tokens & Palette Output</h2>
+        <span class="file-badge">static/css/tokens.css</span>
+      </div>
+      <p style="color: #64748b; font-size: 14px; margin-bottom: 16px;">
+        Visual rendering of CSS variables declared in <code>tokens.css</code>: category theme accents, neutral surfaces, elevation shadows, and font dimensions.
+      </p>
+      
+      <h4 style="font-size: 14px; margin-bottom: 8px; color: #334155;">Emergency Category Color Tokens:</h4>
+      <div class="swatch-grid">
+        <div class="swatch-card">
+          <div class="color-block" style="background: var(--cat-hospital);"></div>
+          <b>Hospital</b><code>--cat-hospital</code>
+        </div>
+        <div class="swatch-card">
+          <div class="color-block" style="background: var(--cat-clinic);"></div>
+          <b>Clinic</b><code>--cat-clinic</code>
+        </div>
+        <div class="swatch-card">
+          <div class="color-block" style="background: var(--cat-pharmacy);"></div>
+          <b>Pharmacy</b><code>--cat-pharmacy</code>
+        </div>
+        <div class="swatch-card">
+          <div class="color-block" style="background: var(--cat-police);"></div>
+          <b>Police</b><code>--cat-police</code>
+        </div>
+        <div class="swatch-card">
+          <div class="color-block" style="background: var(--cat-fire);"></div>
+          <b>Fire Station</b><code>--cat-fire</code>
+        </div>
+        <div class="swatch-card">
+          <div class="color-block" style="background: var(--cat-shelter);"></div>
+          <b>Shelter</b><code>--cat-shelter</code>
+        </div>
+        <div class="swatch-card">
+          <div class="color-block" style="background: var(--cat-water);"></div>
+          <b>Drinking Water</b><code>--cat-water</code>
+        </div>
+        <div class="swatch-card">
+          <div class="color-block" style="background: var(--cat-food);"></div>
+          <b>Food Center</b><code>--cat-food</code>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. layout.css Output -->
+    <div class="section-box" id="layoutShowcase">
+      <div class="section-header">
+        <h2 class="section-title">Responsive Layout Structure Output</h2>
+        <span class="file-badge">static/css/layout.css</span>
+      </div>
+      <p style="color: #64748b; font-size: 14px; margin-bottom: 16px;">
+        Demonstration of <code>layout.css</code> layout classes: floating search bar, quick action wrapper, and navigation layout.
+      </p>
+
+      <div style="background: #f1f5f9; padding: 18px; border-radius: 10px; border: 1px dashed #cbd5e1; position: relative; min-height: 120px;">
+        <div class="search-box-wrapper" style="pointer-events: auto;">
+          <button class="search-icon-btn" aria-label="Search">🔍</button>
+          <input type="text" placeholder="Search emergency hospitals, shelters, clinics..." style="flex:1; border:none; outline:none; font-size:14px; background:transparent;" value="Coimbatore Medical College Hospital">
+          <button class="search-action-btn" style="background: #2563eb; color:white; border-radius:6px; font-weight:600; padding:6px 14px; width:auto;">Search</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. components.css Output -->
+    <div class="section-box" id="componentsShowcase">
+      <div class="section-header">
+        <h2 class="section-title">UI Components & Resource Cards Output</h2>
+        <span class="file-badge">static/css/components.css</span>
+      </div>
+      <p style="color: #64748b; font-size: 14px; margin-bottom: 14px;">
+        Rendered output of category chips, warning notice banners, and emergency facility list cards defined in <code>components.css</code>.
+      </p>
+
+      <div class="emergency-disclaimer-banner" style="margin-bottom: 16px; border-radius: 6px;">
+        <span style="font-size: 16px;">⚠️</span>
+        <div>
+          <strong>EMERGENCY DISCLAIMER:</strong> Data is aggregated from OpenStreetMap and verified state resources. In life-threatening emergencies, immediately dial 108 or 1070.
+        </div>
+      </div>
+
+      <h4 style="font-size: 14px; margin-bottom: 8px; color: #334155;">Active Category Filter Chips:</h4>
+      <div class="chips-row">
+        <div class="category-chip active"><span class="chip-dot" style="background:var(--cat-hospital)"></span> Hospitals (130+)</div>
+        <div class="category-chip" data-category="shelter"><span class="chip-dot"></span> Cyclone Shelters (38)</div>
+        <div class="category-chip" data-category="food_bank"><span class="chip-dot"></span> Relief Food Points</div>
+        <div class="category-chip" data-category="pharmacy"><span class="chip-dot"></span> 24x7 Pharmacies</div>
+        <div class="category-chip" data-category="fire_station"><span class="chip-dot"></span> Fire Stations</div>
+      </div>
+
+      <h4 style="font-size: 14px; margin-top: 18px; margin-bottom: 8px; color: #334155;">Emergency Facility Card:</h4>
+      <div class="facility-card" style="border:1px solid #e2e8f0; border-radius:10px; padding:16px; background:#ffffff; box-shadow:0 4px 6px rgba(0,0,0,0.05); max-width:550px;">
+        <div style="display:flex; justify-content:space-between; align-items:start;">
+          <div>
+            <span style="background:var(--cat-hospital-bg); color:var(--cat-hospital); font-weight:700; font-size:11px; padding:3px 8px; border-radius:4px;">HOSPITAL / ICU READY</span>
+            <h3 style="font-size:16px; color:#0f172a; margin-top:6px;">Rajiv Gandhi Government General Hospital</h3>
+            <p style="font-size:12.5px; color:#64748b; margin-top:2px;">📍 EVR Periyar Salai, Park Town, Chennai</p>
+          </div>
+          <span style="font-family:monospace; font-weight:700; color:#16a34a; font-size:13px;">1.4 km</span>
+        </div>
+        <div style="display:flex; gap:10px; margin-top:12px;">
+          <button style="flex:1; background:#2563eb; color:white; border:none; padding:8px 12px; border-radius:6px; font-weight:600; cursor:pointer;">🧭 Get Directions</button>
+          <button style="flex:1; background:#f1f5f9; color:#0f172a; border:1px solid #cbd5e1; padding:8px 12px; border-radius:6px; font-weight:600; cursor:pointer;">📞 Call 044-25305000</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. bottom-sheet.css Output -->
+    <div class="section-box" id="bottomSheetShowcase">
+      <div class="section-header">
+        <h2 class="section-title">Draggable Bottom Sheet & Detail Drawer Output</h2>
+        <span class="file-badge">static/css/bottom-sheet.css</span>
+      </div>
+      <p style="color: #64748b; font-size: 14px; margin-bottom: 14px;">
+        Visual output of the mobile drag handle, summary header, and sliding drawer states defined in <code>bottom-sheet.css</code>.
+      </p>
+
+      <div style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:18px 18px 0 0; padding:14px; max-width:480px; box-shadow:0 -6px 18px rgba(0,0,0,0.1);">
+        <div style="display:flex; justify-content:center; margin-bottom:10px;">
+          <div class="bottom-sheet-handle-bar" style="background:#94a3b8; width:44px; height:5px; border-radius:10px;"></div>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; font-weight:700; font-size:14px; color:#0f172a;">
+          <span>📍 Emergency Resource Details</span>
+          <span style="color:#64748b; font-size:12px;">▲ Swipe to Expand</span>
+        </div>
+        <div style="margin-top:12px; padding:12px; background:white; border-radius:8px; border:1px solid #e2e8f0; font-size:13px;">
+          <div style="color:#0f172a; font-weight:600;">Government Multi-Purpose Cyclone Shelter</div>
+          <div style="color:#64748b; font-size:12px; margin-top:2px;">Capacity: 500 persons · Current Occupancy: 120 (24%)</div>
+          <div style="margin-top:8px; display:flex; gap:6px;">
+            <span style="background:#e0f2fe; color:#0284c7; padding:2px 8px; border-radius:4px; font-size:11px; font-weight:600;">Drinking Water Available</span>
+            <span style="background:#dcfce7; color:#16a34a; padding:2px 8px; border-radius:4px; font-size:11px; font-weight:600;">Medical First Aid</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
